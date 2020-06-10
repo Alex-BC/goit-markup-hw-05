@@ -75,6 +75,12 @@ ul {
 
 /* Site-nav */
 .site-nav .link {
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #212121;
   font-weight: 500;
   font-size: 14px;
@@ -124,6 +130,7 @@ ul {
 .address .item:hover,
 address .item:focus {
   color: #2196f3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hero */
@@ -215,15 +222,24 @@ address .item:focus {
 /* Product */
 
 .figure {
+  position: relative;
   margin: 0;
 }
 .product .product-list {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  margin: 0;
+  padding: 27px;
+  background: rgba(47, 48, 58, 0.8);
+  border-radius: 0px 0px 4px 4px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-align: center;
   text-transform: uppercase;
-  /* color: #ffffff; */
+  color: #ffffff;
 }
 
 .product {
@@ -272,6 +288,7 @@ address .item:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-list-container .social-links {
@@ -313,6 +330,7 @@ address .item:focus {
 .list-clients .item:focus {
   border: 1px solid #2196f3;
   color: #2196f3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Футер */
@@ -431,6 +449,7 @@ address .item:focus {
   color: #ffffff;
   background-color: #2196f3;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
@@ -476,6 +495,8 @@ button {
 
 .projects-items {
   width: 370px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
 }
 
 .projects-items:not(:nth-child(3n)) {
@@ -491,6 +512,7 @@ button {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-filter {
@@ -565,9 +587,11 @@ button {
   color: #afb1b8;
 }
 
-.social-links_item:hover {
+.social-links_item:hover,
+.social-links_item:focus {
   color: white;
   background-color: #2196f3;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links_list:not(:last-child) {
@@ -625,6 +649,58 @@ button {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.social-links-footer:hover {
+.social-links-footer:hover,
+.social-links-footer:focus {
   background-color: #2196f3;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-nav .link.current::after {
+  opacity: 1;
+}
+.site-nav .link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box {
+  overflow: hidden;
+  position: relative;
+}
+
+.overlay .text {
+  top: 0;
+  padding: 63px 24px;
+  margin: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link:hover .overlay,
+.link:focus .overlay {
+  transform: translateY(0);
 }
