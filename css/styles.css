@@ -19,7 +19,8 @@
 }
 
 *,
-::after ::before {
+::after,
+::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -220,6 +221,10 @@ address .item:focus {
   margin-right: 30px;
 }
 /* Product */
+
+.product_img {
+  display: block;
+}
 
 .figure {
   position: relative;
@@ -461,6 +466,7 @@ button {
 }
 
 .projects .title {
+  margin-top: 0;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -473,12 +479,15 @@ button {
 }
 
 .projects .subtitle {
+  margin-bottom: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
   color: #757575;
 }
-
+.title-subtitle {
+  padding: 20px 24px;
+}
 .projects .text {
   font-weight: 400;
   font-size: 18px;
@@ -591,7 +600,8 @@ button {
 .social-links_item:focus {
   color: white;
   background-color: #2196f3;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links_list:not(:last-child) {
